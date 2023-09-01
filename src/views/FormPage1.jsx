@@ -60,7 +60,7 @@ const FormPage1 = (props) =>{
                         <label>Password: </label>
                         <input 
                         name="password" 
-                        type="text" 
+                        type="password" 
                         value={password} 
                         onChange={(e) => { setPassword(e.target.value) }}
                         />
@@ -69,13 +69,21 @@ const FormPage1 = (props) =>{
                         <label>ConfirmPassword: </label>
                         <input 
                         name="confirmPassword" 
-                        type="text" 
+                        type="password" 
                         value={confirmPassword} 
                         onChange={(e) => { setConfirmPassword(e.target.value) }}
                         />
                     </div>
                     <button>Show Form Info</button>
                 </form>
+
+                <div>
+                    <p>First Name: {firstName}</p>
+                    <p>Last Name: {lastName}</p>
+                    <p>Email: {email}</p>
+                    <p>Password: {password}</p>
+                    <p>Confirm Password: {confirmPassword}</p>
+                </div>
             </fieldset>
         </>
     )
