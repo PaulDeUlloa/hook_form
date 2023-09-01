@@ -9,11 +9,11 @@ const FormPage1 = (props) =>{
     //Password
     //Confirm Password
 
-    const [FirstName, setFirstName] = useState("");
-    const [LastName, setLastName] = useState("");
-    const [Email, setEmail] = useState("");
-    const [Password, setPassword] = useState("");
-    const [ConfirmPassword, setConfirmPassword] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
 
     return(
         <>
@@ -25,7 +25,8 @@ const FormPage1 = (props) =>{
                         <input 
                         name="first name" 
                         type="text" 
-                        value={FirstName} 
+                        value={firstName} 
+                        onChange={(e) => { setFirstName(e.target.value) }}
                         />
                     </div>
                     <div>
@@ -33,7 +34,8 @@ const FormPage1 = (props) =>{
                         <input 
                         name="last name" 
                         type="text" 
-                        value={LastName} 
+                        value={lastName} 
+                        onChange={(e) => { setLastName(e.target.value) }}
                         />
                     </div>
                     <div>
@@ -41,7 +43,8 @@ const FormPage1 = (props) =>{
                         <input 
                         name="email" 
                         type="text" 
-                        value={Email} 
+                        value={email} 
+                        onChange={(e) => { setEmail(e.target.value) }}
                         />
                     </div>
                     <div>
@@ -49,7 +52,8 @@ const FormPage1 = (props) =>{
                         <input 
                         name="password" 
                         type="text" 
-                        value={Password} 
+                        value={password} 
+                        onChange={(e) => { setPassword(e.target.value) }}
                         />
                     </div>
                     <div>
@@ -57,7 +61,8 @@ const FormPage1 = (props) =>{
                         <input 
                         name="confirmPassword" 
                         type="text" 
-                        value={ConfirmPassword} 
+                        value={confirmPassword} 
+                        onChange={(e) => { setConfirmPassword(e.target.value) }}
                         />
                     </div>
                     <button>Show Form Info</button>
