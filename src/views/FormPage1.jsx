@@ -12,6 +12,7 @@ const FormPage1 = (props) => {
     //Confirm Password
 
     const [firstName, setFirstName] = useState("");
+    const [firstNameError, setFirstNameError] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -44,6 +45,23 @@ const FormPage1 = (props) => {
         }
     };
 
+    const handleFirstName = (e) => {
+        setFirstName(e.target.value);
+    }
+    const handleLastName = (e) => {
+        setLastName(e.target.value);
+    }
+    const handleEmail = (e) => {
+        setEmail(e.target.value);
+    }
+    const handlePassword = (e) => {
+        setPassword(e.target.value);
+    }
+    const handleConfirmPassword = (e) => {
+        setConfirmPassword(e.target.value);
+    }
+
+
     return (
         <>
             <fieldset>
@@ -58,7 +76,7 @@ const FormPage1 = (props) => {
                             name="first name"
                             type="text"
                             value={firstName}
-                            onChange={(e) => { setFirstName(e.target.value) }}
+                            onChange={handleFirstName}
                         />
                         {
                             firstName.length < 2 ?
@@ -72,7 +90,7 @@ const FormPage1 = (props) => {
                             name="last name"
                             type="text"
                             value={lastName}
-                            onChange={(e) => { setLastName(e.target.value) }}
+                            onChange={handleLastName}
                         />
                         {
                             lastName.length < 2 ?
@@ -86,7 +104,7 @@ const FormPage1 = (props) => {
                             name="email"
                             type="text"
                             value={email}
-                            onChange={(e) => { setEmail(e.target.value) }}
+                            onChange={handleEmail}
                         />
                         {
                             email.length < 5 ?
@@ -100,7 +118,7 @@ const FormPage1 = (props) => {
                             name="password"
                             type="password"
                             value={password}
-                            onChange={(e) => { setPassword(e.target.value) }}
+                            onChange={handlePassword}
                         />
                         {
                             password.length < 8 ?
@@ -114,7 +132,7 @@ const FormPage1 = (props) => {
                             name="confirmPassword"
                             type="password"
                             value={confirmPassword}
-                            onChange={(e) => { setConfirmPassword(e.target.value) }}
+                            onChange={handleConfirmPassword}
                         />
                         {
                             confirmPassword !== password ?
