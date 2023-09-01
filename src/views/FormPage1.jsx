@@ -52,9 +52,11 @@ const FormPage1 = (props) => {
     const handleFirstName = (e) => {
         setFirstName(e.target.value);
 
-        if(firstName.length <2){
-            return "First Name must be at least 2 characters";
-        }else{
+        if (e.target.value.length < 1) {
+            setFirstNameError("First Name is required!");
+        } else if (firstName.length < 2) {
+            setFirstNameError("First Name must be at least 2 characters");
+        } else {
             setFirstNameError("");
         }
     }
@@ -62,9 +64,11 @@ const FormPage1 = (props) => {
     const handleLastName = (e) => {
         setLastName(e.target.value);
 
-        if(lastName.length <2){
-            setLastNameError ("Last Name must be at least 2 characters");
-        }else{
+        if (e.target.value.length < 1) {
+            setLastNameError("Last Name is required!");
+        } else if (lastName.length < 2) {
+            setLastNameError("Last Name must be at least 2 characters");
+        } else {
             setLastNameError("");
         }
     }
@@ -72,9 +76,11 @@ const FormPage1 = (props) => {
     const handleEmail = (e) => {
         setEmail(e.target.value);
 
-        if(email.length <5){
-            setEmailError ("Email must be at least 5 characters");
-        }else{
+        if (e.target.value.length < 1) {
+            setEmailError("Email is required!")
+        } else if (email.length < 5) {
+            setEmailError("Email must be at least 5 characters");
+        } else {
             setEmailError("");
         }
     }
@@ -82,9 +88,11 @@ const FormPage1 = (props) => {
     const handlePassword = (e) => {
         setPassword(e.target.value);
 
-        if(password.length <8){
-            setPasswordError ("Password must be at least 8 characters");
-        }else{
+        if (e.target.value.length < 1) {
+            setPasswordError("Password is required!");
+        } else if (password.length < 8) {
+            setPasswordError("Password must be at least 8 characters");
+        } else {
             setPasswordError("");
         }
     }
@@ -92,9 +100,11 @@ const FormPage1 = (props) => {
     const handleConfirmPassword = (e) => {
         setConfirmPassword(e.target.value);
 
-        if(confirmPassword === password){
-            setConfirmPasswordError ("Passwords must match");
-        }else{
+        if (e.target.value.length < 1) {
+            setConfirmPasswordError("Confirm Password is required!");
+        } else if (password !== confirmPassword) {
+            setConfirmPasswordError("Passwords must match");
+        } else {
             setConfirmPasswordError("");
         }
     }
@@ -105,7 +115,7 @@ const FormPage1 = (props) => {
             <fieldset>
                 <legend>FormPage1.jsx</legend>
 
-                    <h2>{formMessage()}</h2>
+                <h2>{formMessage()}</h2>
 
                 <form onSubmit={handleSubmit} >
                     <div>
@@ -117,8 +127,8 @@ const FormPage1 = (props) => {
                             onChange={handleFirstName}
                         />
                         {
-                            firstName.length < 2 ?
-                                <p style={{ color: "red" }}>{ firstNameError }</p> :
+                            firstNameError ?
+                                <p style={{ color: "red" }}>{firstNameError}</p> :
                                 <></>
                         }
                     </div>
@@ -132,7 +142,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             lastNameError ?
-                                <p style={{ color: "red" }}>{ lastNameError }</p> :
+                                <p style={{ color: "red" }}>{lastNameError}</p> :
                                 <></>
                         }
                     </div>
@@ -146,7 +156,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             emailError ?
-                                <p style={{ color: "red" }}>{ emailError }</p> :
+                                <p style={{ color: "red" }}>{emailError}</p> :
                                 <></>
                         }
                     </div>
@@ -154,13 +164,13 @@ const FormPage1 = (props) => {
                         <label>Password: </label>
                         <input
                             name="password"
-                            type="password"
+                            type="text"
                             value={password}
                             onChange={handlePassword}
                         />
                         {
                             passwordError ?
-                                <p style={{ color: "red" }}>{ passwordError }</p> :
+                                <p style={{ color: "red" }}>{passwordError}</p> :
                                 <></>
                         }
                     </div>
@@ -168,13 +178,13 @@ const FormPage1 = (props) => {
                         <label>ConfirmPassword: </label>
                         <input
                             name="confirmPassword"
-                            type="password"
+                            type="text"
                             value={confirmPassword}
                             onChange={handleConfirmPassword}
                         />
                         {
                             confirmPasswordError ?
-                                <p style={{ color: "red" }}>{ confirmPasswordError }</p>:
+                                <p style={{ color: "red" }}>{confirmPasswordError}</p> :
                                 <></>
                         }
                     </div>
