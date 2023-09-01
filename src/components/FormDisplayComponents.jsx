@@ -1,9 +1,9 @@
 import React from 'react';
 
-const FormDisplayComponent = (props) =>{
+const FormDisplayComponents = (props) =>{
     return (
         <fieldset>
-            <legend>FormDisplayComponent.jsx</legend>
+            <legend>FormDisplayComponents.jsx</legend>
             <div>
                 <p>First Name: {props.firstName}</p>
                 <p>Last Name: {props.lastName}</p>
@@ -15,4 +15,4 @@ const FormDisplayComponent = (props) =>{
     );
 };
 
-export default FormDisplayComponent;
+export default FormDisplayComponents;

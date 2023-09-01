@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FormDisplayComponent from "../components/FormDisplayComponent";
+import FormDisplayComponents from "../components/FormDisplayComponents";
+
 
 
 const FormPage1 = (props) =>{
@@ -22,7 +23,7 @@ const FormPage1 = (props) =>{
         e.preventDefault();
         // No database yet
 
-        const newData = { firstName, lastName, email, password, confirmPassword }
+        const newData = { firstName, lastName, email, password, confirmPassword };
         console.log(newData)
     }
 
@@ -79,7 +80,7 @@ const FormPage1 = (props) =>{
                     <button>Show Form Info</button>
                 </form>
 
-                <FormDisplayComponent firstName={firstName} lastName={lastName} email={email} password={password} confirmPassword={confirmPassword} />
+                <FormDisplayComponents firstName={firstName} lastName={lastName} email={email} password={password} confirmPassword={confirmPassword} />
                 
             </fieldset>
         </>
