@@ -30,10 +30,21 @@ const FormPage1 = (props) => {
 
     }
 
+    const formMessage = () => {
+        if (hasBeenSubmitted) {
+            return "Thank you for submitting the form!";
+        } else {
+            return "Welcome, please submit the form";
+        }
+    };
+
     return (
         <>
             <fieldset>
                 <legend>FormPage1.jsx</legend>
+
+                    <h2>{formMessage()}</h2>
+
                 <form onSubmit={handleSubmit} >
                     <div>
                         <label>First Name: </label>
@@ -45,7 +56,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             firstName.length < 2 ?
-                                <p style={{color: "red"}}>First Name must be at least 2 characters</p> :
+                                <p style={{ color: "red" }}>First Name must be at least 2 characters</p> :
                                 <></>
                         }
                     </div>
@@ -59,7 +70,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             lastName.length < 2 ?
-                                <p style={{color: "red"}}>Last Name must be at least 2 characters</p> :
+                                <p style={{ color: "red" }}>Last Name must be at least 2 characters</p> :
                                 <></>
                         }
                     </div>
@@ -73,7 +84,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             email.length < 5 ?
-                                <p style={{color: "red"}}>Email must be at least 5 characters</p> :
+                                <p style={{ color: "red" }}>Email must be at least 5 characters</p> :
                                 <></>
                         }
                     </div>
@@ -87,7 +98,7 @@ const FormPage1 = (props) => {
                         />
                         {
                             password.length < 8 ?
-                                <p style={{color: "red"}}>Email must be at least 8 characters</p> :
+                                <p style={{ color: "red" }}>Email must be at least 8 characters</p> :
                                 <></>
                         }
                     </div>
@@ -101,8 +112,8 @@ const FormPage1 = (props) => {
                         />
                         {
                             confirmPassword == password ?
-                            <p style={{color: "red"}}>Confirm Password must be at least 8 characters</p> :
-                            <p style={{color: "red"}}>Passwords must match </p>
+                                <p style={{ color: "red" }}>Confirm Password must be at least 8 characters</p> :
+                                <p style={{ color: "red" }}>Passwords must match </p>
                         }
                     </div>
                     <button>Show Form Info</button>
