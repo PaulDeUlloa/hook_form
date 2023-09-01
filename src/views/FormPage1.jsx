@@ -15,11 +15,20 @@ const FormPage1 = (props) =>{
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
+    // e stands for Event
+    //Handler for Form
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // No database yet
+        const newData = { firstName, lastName, email, password, confirmPassword }
+        console.log(newData)
+    }
+
     return(
         <>
             <fieldset>
                 <legend>FormPage1.jsx</legend>
-                <form onSubmit="" >
+                <form onSubmit={ handleSubmit } >   
                     <div>
                         <label>First Name: </label>
                         <input 
