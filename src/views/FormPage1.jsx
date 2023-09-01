@@ -28,6 +28,7 @@ const FormPage1 = (props) => {
         const newData = { firstName, lastName, email, password, confirmPassword };
         console.log(newData);
 
+        setHasBeenSubmitted(true);
     }
 
     const formMessage = () => {
