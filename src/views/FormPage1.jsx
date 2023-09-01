@@ -26,6 +26,11 @@ const FormPage1 = (props) => {
         // No database yet
 
         const newData = { firstName, lastName, email, password, confirmPassword };
+        setFirstName("");
+        setLastName("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
         console.log(newData);
 
         setHasBeenSubmitted(true);
@@ -112,9 +117,9 @@ const FormPage1 = (props) => {
                             onChange={(e) => { setConfirmPassword(e.target.value) }}
                         />
                         {
-                            confirmPassword == password ?
-                                <p style={{ color: "red" }}>Confirm Password must be at least 8 characters</p> :
-                                <p style={{ color: "red" }}>Passwords must match </p>
+                            confirmPassword !== password ?
+                                <p style={{ color: "red" }}>Passwords must match </p>:
+                                <></>
                         }
                     </div>
                     <button>Show Form Info</button>
